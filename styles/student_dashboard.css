@@ -1,0 +1,242 @@
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+@media print {
+  .table,
+  .table__body {
+    overflow: visible;
+    height: auto !important;
+    width: auto !important;
+  }
+}
+
+/*@page {
+      size: landscape;
+      margin: 0; 
+  }*/
+
+body {
+  min-height: 100vh;
+  background: url(../img/student_dash.png);
+  display: flex;
+  background-position: left;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+}
+
+main.table {
+  width: 82vw;
+  height: 90vh;
+  background-color: #fff5;
+
+  backdrop-filter: blur(7px);
+  box-shadow: 0 0.4rem 0.8rem #0005;
+  border-radius: 0.8rem;
+
+  overflow: hidden;
+}
+
+.table__header {
+  width: 100%;
+  height: 10%;
+  background-color: #fff4;
+  padding: 0.8rem 1rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user {
+  cursor: pointer;
+  margin-left: 2rem;
+}
+.user i {
+  margin-right: 0.5rem;
+}
+.fa-x {
+  display: none;
+}
+.user.active .fa-user {
+  display: none;
+}
+.user.active .fa-x {
+  display: unset;
+}
+
+.table__body {
+  width: 95%;
+  max-height: calc(100% - 1.6rem);
+  background-color: #fffb;
+
+  margin: 0.8rem auto;
+  border-radius: 0.6rem;
+
+  overflow: auto;
+  overflow: overlay;
+}
+
+.table__body::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+.table__body::-webkit-scrollbar-thumb {
+  border-radius: 0.5rem;
+  background-color: #0004;
+  visibility: hidden;
+}
+
+.table__body:hover::-webkit-scrollbar-thumb {
+  visibility: visible;
+}
+
+table {
+  width: 100%;
+}
+
+td img {
+  width: 36px;
+  height: 36px;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+
+  vertical-align: middle;
+}
+
+table,
+th,
+td {
+  border-collapse: collapse;
+  padding: 1rem;
+  text-align: left;
+}
+
+thead th {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: #d5d1defe;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #0000000b;
+}
+
+tbody tr {
+  --delay: 0.1s;
+  transition: 0.5s ease-in-out var(--delay), background-color 0s;
+}
+
+tbody tr.hide {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+tbody tr:hover {
+  background-color: #fff6 !important;
+}
+
+tbody tr td,
+tbody tr td p,
+tbody tr td img {
+  transition: 0.2s ease-in-out;
+}
+
+tbody tr.hide td,
+tbody tr.hide td p {
+  padding: 0;
+  font: 0 / 0 sans-serif;
+  transition: 0.2s ease-in-out 0.5s;
+}
+
+tbody tr.hide td img {
+  width: 0;
+  height: 0;
+  transition: 0.2s ease-in-out 0.5s;
+}
+
+@media (max-width: 1000px) {
+  td:not(:first-of-type) {
+    min-width: 12.1rem;
+  }
+}
+
+thead th span.icon-arrow {
+  display: inline-block;
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 50%;
+  border: 1.4px solid transparent;
+
+  text-align: center;
+  font-size: 1rem;
+
+  margin-left: 0.5rem;
+  transition: 0.2s ease-in-out;
+}
+
+thead th:hover span.icon-arrow {
+  border: 1.4px solid #4a90e2;
+}
+
+thead th:hover {
+  color: #4a90e2;
+}
+
+thead th.active span.icon-arrow {
+  background-color: #4a90e2;
+  color: #fff;
+}
+
+thead th.asc span.icon-arrow {
+  transform: rotate(180deg);
+}
+
+thead th.active,
+tbody td.active {
+  color: #4a90e2;
+}
+.student {
+  position: absolute;
+  z-index: 2;
+  top: 7rem;
+  margin-left: 2.5rem;
+  left: 9vw;
+  padding: 2rem;
+  border-radius: 1.1rem;
+  width: 28rem;
+  background: #fff;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.5s linear;
+}
+@media (max-width: 33rem) {
+  .student {
+    width: 70vw;
+  }
+}
+.student.active {
+  transform: scaleY(1);
+}
+
+.student .row {
+  display: flex;
+  justify-content: space-between;
+  margin: 1.5rem 0;
+}
+input[type="submit"] {
+  border: none;
+  text-decoration: none;
+  color: #e9e9e9;
+  border-radius: 0.5rem;
+  padding: 0.75em 1.7rem;
+  background: linear-gradient(45deg, #4a90e2, #55bbea);
+}

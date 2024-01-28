@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+}
+
+:root {
+  --text-color: #001737;
+  --white-bg: #f7f4fa;
+  --primary: #4a90e2;
+  --secodary: #55bbea;
+  --bg: #f5f5f5;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  height: 100vh;
+  width: 99vw;
+  background: var(--white-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  gap: 4rem;
+}
+
+form {
+  width: 26rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background: #ffffff;
+  padding: 4rem;
+  border-radius: 0.5rem;
+}
+input[type="text"] {
+  margin: 1.5rem 0;
+  width: 100%;
+  border-radius: 1.1rem;
+  padding: 0.7em 1.7rem;
+  border: 1px solid var(--primary);
+}
+.error_message {
+  margin: 1.5rem 0;
+  width: 100%;
+  border-radius: 1.1rem;
+  padding: 0.7em 1.7rem;
+  border: 1px solid rgb(209, 64, 64);
+  color: rgb(209, 64, 64);
+}
+input[type="submit"] {
+  margin: 1.5rem 0;
+  border: none;
+  text-decoration: none;
+  color: #001737;
+  border-radius: 0.5rem;
+  padding: 0.75em 1.7rem;
+  background: linear-gradient(45deg, var(--primary), var(--secodary));
+  color: var(--bg);
+  border-radius: 99rem;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+a {
+  margin-top: 4rem;
+  color: #4a90e2;
+  text-align: center;
+}
+b {
+  font-weight: 600;
+  color: #55bbea;
+}
+@media (max-width: 923px) {
+  body {
+    flex-direction: column;
+    overflow: hidden;
+    align-items: center;
+    gap: 0rem;
+  }
+  img {
+    width: 30%;
+  }
+}
+@media (max-width: 420px) {
+  form {
+    width: 90vw;
+    padding: 1rem;
+  }
+  img {
+    width: 60%;
+  }
+}
